@@ -4,15 +4,12 @@ import NonListenList from "./NonListenList"
 import { Note } from "./types"
 
 const Main = () => {
-  const { data } = useCollection<Note>("notes", { listen: true })
+  const { data, add } = useCollection<Note>("notes", { listen: true })
 
   const [newNote, setNewNote] = useState("")
   const submitNewNote = () => {
     console.log("Adding", newNote)
-    // Here we add a new note with firebase directly, which might be necessary if we want want to do batching etc.
-    fuego.db.collection("notes").add({ content: newNote })
-    // This also doesn't work
-    // firestore().collection("notes").add({ content: newNote })
+    add({ content: newNote })
     setNewNote("")
 
     /**
