@@ -3,7 +3,6 @@ import { Fuego, FuegoProvider } from "@nandorojo/swr-firestore"
 import Main from "./Main"
 import "firebase/auth"
 import "firebase/firestore"
-import "./firebaseRaw"
 
 const firebaseConfig = {
   apiKey: "AIzaSyBEXNKYP8Dim2zvtC8T90DgzW4qkw_UATc",
